@@ -1,15 +1,11 @@
-Here’s a draft `README.md` file for your Task-1 that outlines the steps, analysis, and findings for the Nmap scan and Wireshark packet capture. You can customize the VM IP, ports, and research content after your actual scan.
 
----
 
-````markdown
-# Task 1: Port Scanning and Packet Analysis using Nmap & Wireshark
+# Task 1: Scan Your Local Network for Open Ports
 
 ## Objective
-To perform a **TCP SYN scan** on a virtual host using `nmap`, capture and analyze packets using `Wireshark`, identify open ports and running services, understand potential personal security risks, and store the scan results in **HTML format**.
-
----
-
+Learn to discover open ports on devices in your local network to understand network exposure.
+## Tools
+nmap, wireshark
 ## Steps Followed
 
 ### 1. Installed Nmap
