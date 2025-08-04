@@ -23,13 +23,13 @@ sudo apt install nmap
 ### 3. Performed a TCP SYN Scan
 
 ```bash
-sudo nmap -sS -Pn -T4 -oX scan_output.xml <TARGET_IP>
+sudo nmap -sS -sV -sC -O -oX scan_output.xml <TARGET_IP> -v
 ```
 
 * `-sS` : TCP SYN scan.
-* `-Pn` : Skip host discovery (treat host as online).
-* `-T4` : Aggressive timing for faster scanning.
 * `-oX` : Output in XML (for HTML conversion).
+* `-sV` : Probe open ports to determine service/version info.
+* `-sC` : used the nmap default scripts for more information gathering
 
 ### 4. Converted XML Output to HTML
 
@@ -41,21 +41,12 @@ xsltproc scan_output.xml -o scan_report.html
 
 ## Scan Summary
 
-| Port | State | Service      |
-| ---- | ----- | ------------ |
-| 22   | open  | SSH          |
-| 80   | open  | HTTP         |
-| 139  | open  | NetBIOS-SSN  |
-| 445  | open  | Microsoft-DS |
-| 3306 | open  | MySQL        |
+You can find the results in the above **HTML file**
 
-*(Replace with your actual results)*
-
----
 
 ## Packet Analysis (Wireshark)
 
-* Verified TCP three-way handshake (SYN, SYN-ACK, ACK).
+* Verified TCP Half way handshake (SYN, SYN-ACK).
 * Observed destination ports.
 * Identified that SYN packets were being sent to a range of ports.
 * Confirmed SYN-ACK responses only for open ports.
@@ -115,9 +106,3 @@ This task helped in:
 * Analyzing network behavior.
 * Identifying security weaknesses due to open ports.
 
-> **Reminder:** Always scan systems you own or have explicit permission to assess.
-
-```
-
-Let me know if you'd like a template folder structure or want to automate this with a Bash script too.
-```
