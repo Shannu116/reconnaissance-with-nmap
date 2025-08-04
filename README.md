@@ -6,6 +6,8 @@
 Learn to discover open ports on devices in your local network to understand network exposure.
 ## Tools
 nmap, wireshark
+## OS
+Kali (attacking),Metasploitable 2 (victim)
 ## Steps Followed
 
 ### 1. Installed Nmap
